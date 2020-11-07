@@ -7,12 +7,12 @@ public class MovementBehavior : StateMachineBehaviour
     // settings /////////////////////////////////////
     public float backForthSpeed;
     public float leftRightSpeed;
-    
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        backForthSpeed = animator.gameObject.GetComponent<MovementInput>().forwardSpeed;
+        leftRightSpeed = animator.gameObject.GetComponent<MovementInput>().leftSpeed;
+    }
 
     // on each frame, change player speed according to 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

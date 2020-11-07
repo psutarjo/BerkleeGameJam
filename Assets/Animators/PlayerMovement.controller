@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cbea12eed82aa4b9b2562f65d84221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backForthSpeed: 1
-  leftRightSpeed: 1
+  backForthSpeed: 10
+  leftRightSpeed: 10
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
