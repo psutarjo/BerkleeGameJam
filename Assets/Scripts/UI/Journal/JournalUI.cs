@@ -8,11 +8,9 @@ public class JournalUI : MonoBehaviour
 {
     // object containers ////////////////////////////////////////////
     public GameObject journalTextBox; // should be a text mesh pro
+    public GameObject NormalUIObj; // the "Normal UI" object in canvas
 
     // keyboard settings ////////////////////////////////////////////
-    public KeyCode nextKey = KeyCode.RightArrow;
-    public KeyCode prevKey = KeyCode.LeftArrow;
-    public KeyCode toggleKey = KeyCode.Tab;
 
 
     // system messages //////////////////////////////////////////////
@@ -54,6 +52,9 @@ public class JournalUI : MonoBehaviour
 
         // deactivate self
         gameObject.SetActive(false);
+
+        // active normal UI
+        NormalUIObj.SetActive(true);
     }
 
     public void NextPage(bool reverse = false) {
