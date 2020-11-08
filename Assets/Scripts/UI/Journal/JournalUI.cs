@@ -10,19 +10,17 @@ public class JournalUI : MonoBehaviour
     public GameObject journalTextBox; // should be a text mesh pro
     public GameObject NormalUIObj; // the "Normal UI" object in canvas
 
-    // keyboard settings ////////////////////////////////////////////
-
 
     // system messages //////////////////////////////////////////////
     private void Update() {
         // TODO: input logic
-        if (Input.GetKeyDown(nextKey)) {
+        if (Input.GetKeyDown(Settings.instance.nextJournal)) {
             NextPage();
         }
-        else if (Input.GetKeyDown(prevKey)) {
+        else if (Input.GetKeyDown(Settings.instance.prevJournal)) {
             NextPage(true);
         }
-        else if (Input.GetKeyDown(toggleKey)) {
+        else if (Input.GetKeyDown(Settings.instance.toggleJournal)) {
             CloseJournal();
         }
     }

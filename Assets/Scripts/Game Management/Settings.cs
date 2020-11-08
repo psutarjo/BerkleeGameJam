@@ -11,6 +11,8 @@ public class Settings : MonoBehaviour
     public KeyCode prevJournal = KeyCode.LeftArrow;
     public KeyCode toggleJournal = KeyCode.Tab;
 
+    // TODO: menu settings //////////////////////////////////////////////////
+
     // system messages //////////////////////////////////////////////////////
     void Awake() {
         if (instance == null)
