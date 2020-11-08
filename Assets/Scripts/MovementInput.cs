@@ -16,8 +16,6 @@ public class MovementInput : MonoBehaviour
     public KeyCode right = KeyCode.D;
 
     // parameter settings //////////////////////////////////////////////////////////
-    public float xSensitivity;
-    public float ySensitivity;
     public float forwardSpeed;
     public float rightSpeed;
     public float interactRange;
@@ -58,16 +56,16 @@ public class MovementInput : MonoBehaviour
         CheckClickInput();
     }
 
-    private void LateUpdate() {
-        // TODO: differentiate mouse positions
-        float xDiff = Input.GetAxis("Mouse X");
-        float yDiff = Input.GetAxis("Mouse Y");
+    //private void LateUpdate() {
+    //    // TODO: differentiate mouse positions
+    //    float xDiff = Input.GetAxis("Mouse X");
+    //    float yDiff = Input.GetAxis("Mouse Y");
 
-        // TODO: update horizontal movement
-        gameObject.transform.Rotate(new Vector3(0, xDiff * xSensitivity, 0));
-        // move the camera to player position
-        Camera.main.transform.Rotate(-yDiff * xSensitivity, 0, 0);
-    }
+    //    // TODO: update horizontal movement
+    //    gameObject.transform.Rotate(new Vector3(0, xDiff * xSensitivity, 0));
+    //    // move the camera to player position
+    //    Camera.main.transform.Rotate(-yDiff * xSensitivity, 0, 0);
+    //}
 
 
     // aux functions ///////////////////////////////////////////////////////////////
