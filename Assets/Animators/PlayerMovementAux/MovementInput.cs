@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementInput : MonoBehaviour
 {
+    // components //////////////////////////////////////////////////////////////////
     private Animator myAnimator;
     private GameObject myCamera;
 
@@ -18,12 +19,12 @@ public class MovementInput : MonoBehaviour
     public float ySensitivity;
     public float forwardSpeed;
     public float leftSpeed;
+    public float interactRange;
+    public LayerMask runeLayer;
 
     // animator trigger collections ////////////////////////////////////////////////
     private Dictionary<KeyCode, string> movementTriggers;
 
-    //// remembered parameters ///////////////////////////////////////////////////////
-    //private Vector2 lastMousePos;
 
     // system messages /////////////////////////////////////////////////////////////
     void Start()
@@ -51,6 +52,10 @@ public class MovementInput : MonoBehaviour
             myAnimator.SetBool("MovePressed", true);
         }
 
+        CheckClickInput();
+    }
+
+    private void LateUpdate() {
         // TODO: differentiate mouse positions
         float xDiff = Input.GetAxis("Mouse X");
         float yDiff = Input.GetAxis("Mouse Y");
@@ -80,5 +85,30 @@ public class MovementInput : MonoBehaviour
             myAnimator.SetBool(i, false);
         }
         myAnimator.SetBool("MovePressed", false);
+    }
+
+    private GameObject CheckClickInput() { // sending clicking and hovering messages
+        // I'm assuing there's only one object in contact with player
+        RaycastHit hit;
+        bool isClicking = Input.GetMouseButton(0);
+        if (Physics.Raycast(myCamera.transform.position, myCamera.transform.forward, out hit, Mathf.Infinity, runeLayer)) {
+            // if it's in "touching range"
+            if (hit.distance <= interactRange) {
+                Clickable hovered = hit.collider.gameObject.GetComponent<Clickable>();
+                if (isClicking) {
+                    hovered.Click();
+                }
+                else {
+                    hovered.Hover();
+                }
+
+                return hit.collider.gameObject;
+            }
+        }
+        else {
+            Debug.Log("no hit");
+        }
+
+        return null;
     }
 }
