@@ -408,7 +408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288a4ac99b7cb4c4cb59f2eb53629ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journalTextBox: {fileID: 0}
+  journalTextBox: {fileID: 1017551366}
+  nextKey: 275
+  prevKey: 276
+  toggleKey: 9
 --- !u!1 &601587886
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,9 +697,60 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "I woke up in a dark room. I don\u2019t remember anything. Not how I got
-    here, or what I was doing before I woke up. I think I was looking for something...but
-    what was it?"
+  m_text: "Water + loop\r\nBreak the loop/experience memories?\r\nIf 3d, the text
+    pop up for story would be a game object you could walk past\r\nIf 2d, it could
+    be like a looping side scroller\r\nDark room?\r\nCould be 3D because less assets\r\nMake
+    it look like the player is seeing the same thing over and over again\r\nI like
+    the idea of having a point where the player has THOUGHT that they\u2019re seeing
+    the same thing on repeat, but then through some sort of reveal, realizing that
+    the last few rooms have literally been the same room. Maybe there could be something
+    in the room that\u2019s so clearly unique that it seemingly couldn\u2019t possibly
+    be duplicated, but there could be narration/dialogue/a cutscene that reveals
+    that it is supernaturally the same room X amount of times \r\nI like this! Like
+    each room is a separate escape with clues to the story, but eventually the rooms
+    get the same, and dialogue questions what is going on before the loop is revealed\r\nThey
+    could be relatively simple puzzles too, for time\u2019s sake. Like, find the
+    right combo that opens this door for one of them, etc.\r\nOr some might be simply
+    a \u201Cchoose a door\u201D sort of escape\r\nAt this point I\u2019m kind of
+    thinking of this space as some version of Daedalus\u2019s labyrinth???\r\nMaze
+    \u2192 \u201Cchoose your own adventure\u201D\r\nGo the wrong way \u2192 back
+    to start?\r\nCan teleport the player to the start like Stanley\u2019s Parable\r\nGet
+    2 room/areas that can fill player\u2019s view\r\nWhen entering 1 of them, teleport
+    the player to the other with the same relative position\r\n\u201CSolve\u201D
+    the story as you solve the maze\r\nTorches save progress\r\nSound design gets
+    spooky?\r\nPossible story ideas:\r\nThe player slowly finds out that they have
+    been stuck in this maze for a long time, reliving it\r\nCould find a dropped
+    torch \u2192 clue, etc.\r\nSome places are already lit?\r\nFinishing the maze
+    \u2192 restart loop?\r\nThis way we could get away with a smaller room/maze\u2026\r\nOr
+    a darker interpretation of that idea would be that over the course of the game,
+    the player learns that everything that has happened to them has happened before,
+    and the game ends on the revelation that the \u201Cescape\u201D the were seeking
+    the whole time just sends them back to the beginning\r\nCould introduce a \u201Cflashback\u201D
+    mechanic through dialogue\r\nEssentially the character would get amnesia at the
+    start of each loop, but since the player obviously would remember if they were
+    to repeat the loop, we integrate the idea into story more than gameplay if that
+    makes sense\r\nPlayer dialogue would make this more immersive\r\nDialogue would
+    have to pop up at certain \u201Ccheckpoints\u201D\r\nI\u2019d be happy to record
+    dialogue in addition to music if desired!\r\nAnother weird concept that might
+    fit with either of these or as something different, something about the player
+    not knowing what they look like, and/or trying to find a reflective surface to
+    see themselves in, but maybe they aren\u2019t able to see their reflection? This
+    might be too removed from deja vu though\r\nList of Assets:\r\nPlayer Model (first
+    person)\r\nFloor (stone texture)\r\nWalls\r\nTorches\r\nOur Goals for this game
+    jam\r\nZoe: my personal goal is to create a game with some sort of narrative.
+    I am a writer and a 2D artist\r\nPeter: Learning how to do terrain\r\nJohnny:
+    Prototyping on transporting player\r\nQuinten: Making sounds and music that support
+    the mood/story of the game\r\nGoals For Saturday 11/7:\r\nClear vision of what
+    the gameplay will look like\r\nDetermine specific roles/personal goals\r\nCreate
+    the majority of the music/sfx\r\nNotes 11/17\r\nDialogue implemented in UI\r\nLog
+    of past dialogue so the player can read it again if needed\r\nmaze/walking sim
+    with story revealed\r\nTransported to start when the player makes wrong turn\r\nDialogue
+    barks may pop up here as well \r\nInteractions:\r\nWall with a rune by a locked
+    door\r\nFinding and activating the matching rune \u2192 open the lock\r\nNot
+    always transported to the start\r\nWriting on wall helps player determine where
+    they are once they choose a path\r\nCompleting the maze \u2192 end\r\nRune =
+    floating cube with random letter of text \r\nMatching pairs of \u201Crunes\u201D\r\nASSETS
+    STILL NEEDED\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b54e2ef7514f8346a24a4929536618f, type: 2}
   m_sharedMaterial: {fileID: 1815642463929660615, guid: 1b54e2ef7514f8346a24a4929536618f,
@@ -759,7 +813,7 @@ MonoBehaviour:
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
+  m_pageToDisplay: 0
   m_margin: {x: -7.695782, y: -85.951515, z: 14.592664, w: -119.28719}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
