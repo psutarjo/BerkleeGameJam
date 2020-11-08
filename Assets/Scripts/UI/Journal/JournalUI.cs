@@ -8,23 +8,19 @@ public class JournalUI : MonoBehaviour
 {
     // object containers ////////////////////////////////////////////
     public GameObject journalTextBox; // should be a text mesh pro
-
-    // keyboard settings ////////////////////////////////////////////
-    public KeyCode nextKey = KeyCode.RightArrow;
-    public KeyCode prevKey = KeyCode.LeftArrow;
-    public KeyCode toggleKey = KeyCode.Tab;
+    public GameObject NormalUIObj; // the "Normal UI" object in canvas
 
 
     // system messages //////////////////////////////////////////////
     private void Update() {
         // TODO: input logic
-        if (Input.GetKeyDown(nextKey)) {
+        if (Input.GetKeyDown(Settings.instance.nextJournal)) {
             NextPage();
         }
-        else if (Input.GetKeyDown(prevKey)) {
+        else if (Input.GetKeyDown(Settings.instance.prevJournal)) {
             NextPage(true);
         }
-        else if (Input.GetKeyDown(toggleKey)) {
+        else if (Input.GetKeyDown(Settings.instance.toggleJournal)) {
             CloseJournal();
         }
     }
@@ -54,6 +50,9 @@ public class JournalUI : MonoBehaviour
 
         // deactivate self
         gameObject.SetActive(false);
+
+        // active normal UI
+        NormalUIObj.SetActive(true);
     }
 
     public void NextPage(bool reverse = false) {
