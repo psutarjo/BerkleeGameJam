@@ -7,6 +7,7 @@ public class MovementInput : MonoBehaviour
     // components //////////////////////////////////////////////////////////////////
     private Animator myAnimator;
     private GameObject myCamera;
+    private Rigidbody myRb;
 
     // key settings ////////////////////////////////////////////////////////////////
     public KeyCode forward = KeyCode.W;
@@ -18,7 +19,7 @@ public class MovementInput : MonoBehaviour
     public float xSensitivity;
     public float ySensitivity;
     public float forwardSpeed;
-    public float leftSpeed;
+    public float rightSpeed;
     public float interactRange;
     public LayerMask runeLayer;
 
@@ -31,6 +32,7 @@ public class MovementInput : MonoBehaviour
     {
         myAnimator = gameObject.GetComponent<Animator>();
         myCamera = GameObject.FindWithTag("MainCamera");
+        myRb = gameObject.GetComponent<Rigidbody>();
 
         // initialize movement trigger dictionary
         movementTriggers = new Dictionary<KeyCode, string>();
@@ -43,14 +45,15 @@ public class MovementInput : MonoBehaviour
         //lastMousePos = (Vector2)Input.mousePosition;
     }
 
-    void Update()
-    {
-        // update movement keys
-        ResetAnimator();
-        foreach (KeyCode i in CheckMovementInput()) {
-            myAnimator.SetBool(movementTriggers[i], true);
-            myAnimator.SetBool("MovePressed", true);
-        }
+    private void FixedUpdate() {
+        // update movement
+        float zMove = (Input.GetKey(forward)) ? 1 : 0;
+        zMove -= Input.GetKey(backward) ? 1 : 0;
+        float xMove = (Input.GetKey(left)) ? -1 : 0;
+        xMove += Input.GetKey(right) ? 1 : 0;
+
+        myRb.velocity = transform.forward * zMove * forwardSpeed + transform.right * xMove * rightSpeed
+            + new Vector3(0, myRb.velocity.y, 0);
 
         CheckClickInput();
     }
@@ -62,30 +65,31 @@ public class MovementInput : MonoBehaviour
 
         // TODO: update horizontal movement
         gameObject.transform.Rotate(new Vector3(0, xDiff * xSensitivity, 0));
-        // TODO: update vertical movement
-        myCamera.transform.Rotate(new Vector3(-yDiff * ySensitivity, 0, 0));
+        // move the camera to player position
+        Camera.main.transform.Rotate(-yDiff * xSensitivity, 0, 0);
     }
 
 
     // aux functions ///////////////////////////////////////////////////////////////
-    private List<KeyCode> CheckMovementInput() { // check and return the pressed movement key
-        List<KeyCode> results = new List<KeyCode>();
-        results.Clear();
-        foreach (KeyCode i in new KeyCode[] { forward, backward, left, right }) {
-            if (Input.GetKey(i)) {
-                results.Add(i);
-            }
-        }
+    //private List<KeyCode> CheckMovementInput() { // check and return the pressed movement key
+    //    List<KeyCode> results = new List<KeyCode>();
+    //    results.Clear();
+    //    foreach (KeyCode i in new KeyCode[] { forward, backward, left, right }) {
+    //        if (Input.GetKey(i)) {
+    //            results.Add(i);
+    //        }
+    //    }
 
-        return results;
-    }
+    //    return results;
+    //}
 
-    private void ResetAnimator() { // set all movement input bools false
-        foreach (string i in new string[] {"W", "S", "A", "D"}) {
-            myAnimator.SetBool(i, false);
-        }
-        myAnimator.SetBool("MovePressed", false);
-    }
+
+    //private void ResetAnimator() { // set all movement input bools false
+    //    foreach (string i in new string[] {"W", "S", "A", "D"}) {
+    //        myAnimator.SetBool(i, false);
+    //    }
+    //    myAnimator.SetBool("MovePressed", false);
+    //}
 
     private GameObject CheckClickInput() { // sending clicking and hovering messages
         // I'm assuing there's only one object in contact with player

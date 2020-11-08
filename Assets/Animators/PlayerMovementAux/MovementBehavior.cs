@@ -11,7 +11,7 @@ public class MovementBehavior : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         backForthSpeed = animator.gameObject.GetComponent<MovementInput>().forwardSpeed;
-        leftRightSpeed = animator.gameObject.GetComponent<MovementInput>().leftSpeed;
+        leftRightSpeed = animator.gameObject.GetComponent<MovementInput>().rightSpeed;
     }
 
     // on each frame, change player speed according to 
@@ -20,8 +20,8 @@ public class MovementBehavior : StateMachineBehaviour
         Vector3 newVelocity = new Vector3(0, rb.velocity.y, 0);
         newVelocity += (animator.GetBool("W")) ? animator.transform.forward * backForthSpeed : Vector3.zero;
         newVelocity -= (animator.GetBool("S")) ? animator.transform.forward * backForthSpeed : Vector3.zero;
-        newVelocity += (animator.GetBool("A")) ? (Quaternion.Euler(0, -90, 0) * animator.transform.forward) * leftRightSpeed : Vector3.zero;
-        newVelocity += (animator.GetBool("D")) ? (Quaternion.Euler(0, 90, 0) * animator.transform.forward) * leftRightSpeed : Vector3.zero;
+        newVelocity += (animator.GetBool("A")) ? animator.transform.TransformPoint(Vector3.left) * leftRightSpeed : Vector3.zero;
+        newVelocity += (animator.GetBool("D")) ? animator.transform.TransformPoint(Vector3.right) * leftRightSpeed : Vector3.zero;
 
         animator.gameObject.GetComponent<Rigidbody>().velocity = newVelocity;
     }
