@@ -1,45 +1,74 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JournalUI : MonoBehaviour
 {
     // object containers ////////////////////////////////////////////
     public GameObject journalTextBox; // should be a text mesh pro
 
-    // separate data structure to store each line of story //////////
-    private List<string> entries;
-
-    // remember last page ///////////////////////////////////////////
+    // keyboard settings ////////////////////////////////////////////
+    public KeyCode nextKey = KeyCode.RightArrow;
+    public KeyCode prevKey = KeyCode.LeftArrow;
+    public KeyCode toggleKey = KeyCode.Tab;
 
 
     // system messages //////////////////////////////////////////////
-    private void Awake() {
-        entries = new List<string>();
-        entries.Clear();
-    }
-
     private void Update() {
         // TODO: input logic
+        if (Input.GetKeyDown(nextKey)) {
+            NextPage();
+        }
+        else if (Input.GetKeyDown(prevKey)) {
+            NextPage(true);
+        }
+        else if (Input.GetKeyDown(toggleKey)) {
+            CloseJournal();
+        }
     }
 
 
     // game manager message /////////////////////////////////////////
     public void AddJournalEntry(string newEntry) { // add the new entry into list
-        entries.Add(newEntry);
+        journalTextBox.GetComponent<TextMeshProUGUI>().text += newEntry;
+        journalTextBox.GetComponent<TextMeshProUGUI>().text += "\n\n";
     }
 
 
     // open, close and turn page ////////////////////////////////////
     public void OpenJournal() {
-        // TODO: the game manager calls this method to show journal
+        // the game manager calls this method to show journal
+        
+        // TODO: play sound
+
+        // activate self
+        gameObject.SetActive(true);
     }
 
     public void CloseJournal() {
-        // TODO: called when journal is closed
+        // called when journal is closed
+        
+        // TODO: play sound
+
+        // deactivate self
+        gameObject.SetActive(false);
     }
 
     public void NextPage(bool reverse = false) {
-        // TODO: call this method to turn page, reverse=true means to turn backwards
+        // call this method to turn page, reverse=true means to turn backwards
+        int maxPage = journalTextBox.GetComponent<TextMeshProUGUI>().textInfo.pageCount;
+
+        // TODO: play sound
+
+        // next page
+        if (!reverse && journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay < maxPage) {
+            journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay++;
+        }
+        // previous page
+        else if (reverse && journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay > 1) {
+            journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay--;
+        }
     }
 }
