@@ -25,18 +25,6 @@ public class RespawnPoint : MonoBehaviour
 
         // teleport
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Rigidbody>().MovePosition(newPosition);
-    }
-
-
-    // system messages ////////////////////////////////////////////////////////////////////
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
+        player.transform.position = newPosition;
     }
 }
