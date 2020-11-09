@@ -59,7 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c70ae8fb8752b44baacab2ce9a3bf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScene: 
+  gameScene: PeterScene
+  endScene: End
+  menuScene: JohnnyMainMenu
 --- !u!114 &8142772155718905846
 MonoBehaviour:
   m_ObjectHideFlags: 0

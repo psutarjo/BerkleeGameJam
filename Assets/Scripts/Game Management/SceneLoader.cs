@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SceneLoader : MonoBehaviour
     
     // scenes marked by names ///////////////////////////////////////
     public string gameScene;
+    public string endScene;
+    public string menuScene;
 
 
     // system message ///////////////////////////////////////////////
@@ -21,19 +24,17 @@ public class SceneLoader : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     
     // scenes ///////////////////////////////////////////////////////
     public void StartGame() {
         SceneManager.LoadScene(gameScene);
+    }
+
+    public void EndGame() {
+        SceneManager.LoadScene(endScene);
+    }
+
+    public void BackToMenu() {
+        SceneManager.LoadScene(menuScene);
     }
 }
