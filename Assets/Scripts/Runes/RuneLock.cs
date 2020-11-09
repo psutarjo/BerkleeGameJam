@@ -6,6 +6,7 @@ public class RuneLock : MonoBehaviour
 {
     public string myKey = "theRune";
 
+
     // Update is called once per frame
     void Update()
     {

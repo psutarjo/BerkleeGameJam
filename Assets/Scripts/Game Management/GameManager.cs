@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     // object containers /////////////////////////////////////////////////////
     public GameObject mainDialogueBox;
     public GameObject mainJournal;
+    public Dictionary<string, GameObject> soundEfx;
 
 
     // system messages ///////////////////////////////////////////////////////
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
     public void StartGame() {
         // load the first scene
         SceneLoader.instance.StartGame();
+        runes = new Dictionary<string, bool>();
+        soundEfx = new Dictionary<string, GameObject>();
     }
 
 
@@ -56,5 +59,15 @@ public class GameManager : MonoBehaviour
 
     public bool CheckRune(string key) {
         return (runes.ContainsKey(key) && runes[key] == true);
+    }
+
+
+    // sound effect system //////////////////////////////////////////////////
+    public void RegisterSoundMixer(string key, GameObject other) {
+        soundEfx.Add(key, other);
+    }
+
+    public void PlayerSound(string key, AudioClip sound) {
+
     }
 }

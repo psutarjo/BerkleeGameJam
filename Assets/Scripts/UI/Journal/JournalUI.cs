@@ -10,6 +10,12 @@ public class JournalUI : MonoBehaviour
     public GameObject journalTextBox; // should be a text mesh pro
     public GameObject NormalUIObj; // the "Normal UI" object in canvas
 
+    // sound efx system /////////////////////////////////////////////
+    public string sfxPlayerKey = "JournalSound";
+    public AudioClip openSound;
+    public AudioClip closeSound;
+    public AudioClip pageSound;
+
 
     // system messages //////////////////////////////////////////////
     private void Update() {
@@ -36,8 +42,9 @@ public class JournalUI : MonoBehaviour
     // open, close and turn page ////////////////////////////////////
     public void OpenJournal() {
         // the game manager calls this method to show journal
-        
+
         // TODO: play sound
+        GameManager.instance.PlayerSound(sfxPlayerKey, openSound);
 
         // activate self
         gameObject.SetActive(true);
@@ -45,8 +52,9 @@ public class JournalUI : MonoBehaviour
 
     public void CloseJournal() {
         // called when journal is closed
-        
+
         // TODO: play sound
+        GameManager.instance.PlayerSound(sfxPlayerKey, closeSound);
 
         // deactivate self
         gameObject.SetActive(false);
@@ -60,6 +68,7 @@ public class JournalUI : MonoBehaviour
         int maxPage = journalTextBox.GetComponent<TextMeshProUGUI>().textInfo.pageCount;
 
         // TODO: play sound
+        GameManager.instance.PlayerSound(sfxPlayerKey, pageSound);
 
         // next page
         if (!reverse && journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay < maxPage) {
