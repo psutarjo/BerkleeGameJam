@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour
     // TODO: rune progress
     public Dictionary<string, bool> runes;
 
-    // TODO: journals
-    // TODO: doors unlocked
-
     // object containers /////////////////////////////////////////////////////
     public GameObject mainDialogueBox;
     public GameObject mainJournal;
@@ -52,6 +49,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void UnlockRune(string key) {
-        
+        if (runes.ContainsKey(key)) {
+            runes[key] = true;
+        }
+    }
+
+    public bool CheckRune(string key) {
+        return (runes.ContainsKey(key) && runes[key] == true);
     }
 }

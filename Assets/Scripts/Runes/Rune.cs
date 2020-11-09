@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rune : Clickable
 {
+    public string myKey = "theRune";
+    
     // clicking and hovering ///////////////////////////////////////////
     public override void Click() {
         LightUp();
@@ -12,6 +14,7 @@ public class Rune : Clickable
     public override void Hover() {
         Debug.Log("rune is hovered upon");
     }
+
 
     // aux functions ///////////////////////////////////////////////////
     private void LightUp() {
@@ -23,12 +26,6 @@ public class Rune : Clickable
     // system messages /////////////////////////////////////////////////
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameManager.instance.RegisterRune(myKey);
     }
 }
