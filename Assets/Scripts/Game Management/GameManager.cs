@@ -52,6 +52,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void UnlockRune(string key) {
-        if (runes)
+        
     }
 }
