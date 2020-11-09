@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/JohnnyMainMenu.unity
     guid: 137dda184bd53b34aa7269e7a224a045
   - enabled: 1
-    path: Assets/Scenes/JohnnyPlayerController.unity
-    guid: 73986b209c50de548841f10ede369369
+    path: Assets/Scenes/PeterScene.unity
+    guid: 6c977ce5f79fbee4495bda1cd79fddbf
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 7944ffc2c228d0b499a8a00038fcac4d
   m_configObjects: {}
