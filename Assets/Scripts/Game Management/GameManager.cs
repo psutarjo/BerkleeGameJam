@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public void StartGame() {
         // load the first scene
         SceneLoader.instance.StartGame();
+        runes = new Dictionary<string, bool>();
+        soundEfx = new Dictionary<string, GameObject>();
     }
 
 
