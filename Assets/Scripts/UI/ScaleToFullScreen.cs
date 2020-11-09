@@ -19,8 +19,6 @@ public class ScaleToFullScreen : MonoBehaviour {
             scale *= cameraSize.y / spriteSize.y;
         }
 
-        scale *= 0.5f;
-
         transform.position = Camera.main.transform.position; // Optional
         transform.Translate(new Vector3(0, 0, 5));
         transform.localScale = scale;
