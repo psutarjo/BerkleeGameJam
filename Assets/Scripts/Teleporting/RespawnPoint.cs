@@ -18,13 +18,15 @@ public class RespawnPoint : MonoBehaviour
 
         Debug.Log("collide");
 
-        Vector3 newPosition = other.gameObject.transform.position - transform.position
+        Vector3 newPosition = new Vector3(0, 0, 0);
+        newPosition += other.gameObject.transform.localPosition - transform.position
             + respawnPoint.transform.position; // the position of player when sent back to respawn
 
         Debug.Log(newPosition);
 
         // teleport
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = newPosition;
+        other.gameObject.GetComponent<CharacterController>().enabled = false;
+        other.gameObject.transform.localPosition = newPosition;
+        other.gameObject.GetComponent<CharacterController>().enabled = true;
     }
 }

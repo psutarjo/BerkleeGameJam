@@ -21,6 +21,7 @@ public class DialogueBox : MonoBehaviour
     
     // timer routine /////////////////////////////////////
     private IEnumerator ShowTimedDialogue() {
+        Textbox.SetActive(true);
         float startTime = Time.time;
         while (Time.time - startTime <= 3) {
             yield return null;
