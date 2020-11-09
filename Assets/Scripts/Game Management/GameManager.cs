@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     // progress trackers /////////////////////////////////////////////////////
     // TODO: rune progress
+    public Dictionary<string, bool> runes;
+
     // TODO: journals
     // TODO: doors unlocked
 
@@ -41,5 +43,15 @@ public class GameManager : MonoBehaviour
         mainDialogueBox.GetComponent<DialogueBox>().ShowDialogue(dialogue);
         // add journal entry
         mainJournal.GetComponent<JournalUI>().AddJournalEntry(journal);
+    }
+
+    
+    // rune system //////////////////////////////////////////////////////////
+    public void RegisterRune(string key, bool initial = false) {
+        runes.Add(key, initial);
+    }
+
+    public void UnlockRune(string key) {
+        
     }
 }
