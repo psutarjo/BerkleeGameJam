@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(this);
+
+        runes = new Dictionary<string, bool>();
+        soundEfx = new Dictionary<string, GameObject>();
     }
 
 
@@ -32,8 +35,6 @@ public class GameManager : MonoBehaviour
     public void StartGame() {
         // load the first scene
         SceneLoader.instance.StartGame();
-        runes = new Dictionary<string, bool>();
-        soundEfx = new Dictionary<string, GameObject>();
     }
 
 
