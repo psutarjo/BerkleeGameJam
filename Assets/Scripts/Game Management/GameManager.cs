@@ -69,6 +69,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void PlayerSound(string key, AudioClip sound) {
-
+        if (soundEfx.ContainsKey(key)) {
+            GameObject sp = soundEfx[key];
+            sp.GetComponent<AudioSource>().clip = sound;
+            sp.GetComponent<AudioSource>().Play();
+        }
     }
 }

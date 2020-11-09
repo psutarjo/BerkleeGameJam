@@ -8,7 +8,7 @@ public class SoundEfxPlayer : MonoBehaviour
     
     
     // system messages //////////////////////////////////////////////////////
-    private void Update() {
+    private void Awake() {
         // on load: register self to game manager
         GameManager.instance.RegisterSoundMixer(myKey, gameObject);
     }

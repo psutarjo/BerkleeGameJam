@@ -67,16 +67,17 @@ public class JournalUI : MonoBehaviour
         // call this method to turn page, reverse=true means to turn backwards
         int maxPage = journalTextBox.GetComponent<TextMeshProUGUI>().textInfo.pageCount;
 
-        // TODO: play sound
-        GameManager.instance.PlayerSound(sfxPlayerKey, pageSound);
-
         // next page
         if (!reverse && journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay < maxPage) {
             journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay++;
+            // TODO: play sound
+            GameManager.instance.PlayerSound(sfxPlayerKey, pageSound);
         }
         // previous page
         else if (reverse && journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay > 1) {
             journalTextBox.GetComponent<TextMeshProUGUI>().pageToDisplay--;
+            // TODO: play sound
+            GameManager.instance.PlayerSound(sfxPlayerKey, pageSound);
         }
     }
 }

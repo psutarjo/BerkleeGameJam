@@ -495,8 +495,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9136123817924413143}
   - component: {fileID: 6652403026029079457}
+  - component: {fileID: 3312004455660152466}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: JournalSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,13 +510,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9112106366092145881}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21154785, y: 0.98941994, z: -0.18530273}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 1.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2198874707761701920}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!82 &6652403026029079457
 AudioSource:
   m_ObjectHideFlags: 0
@@ -612,6 +613,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3312004455660152466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112106366092145881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059e637ab68c6c944ab84199e7c2e9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myKey: JournalSound
 --- !u!1001 &4533691469868196768
 PrefabInstance:
   m_ObjectHideFlags: 0
