@@ -18,6 +18,11 @@ public class JournalUI : MonoBehaviour
 
 
     // system messages //////////////////////////////////////////////
+    private void Start() {
+        GameManager.instance.mainJournal = gameObject;
+        gameObject.SetActive(false);
+    }
+
     private void Update() {
         // TODO: input logic
         if (Input.GetKeyDown(Settings.instance.nextJournal)) {
