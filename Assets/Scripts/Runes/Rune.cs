@@ -1,14 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Rune : Clickable
 {
-    public string myKey = "theRune";
+    public GameObject rune;
+    public VisualEffect runeEffect;
+
+    private AudioSource m_audioSource;
+    private string myKey;
     
     // clicking and hovering ///////////////////////////////////////////
     public override void Click() {
-        LightUp();
+       if (GameManager.instance.CheckRune(myKey) == false)
+       {
+            Disappear();
+            Debug.Log("Rune is Clicked");
+       }
     }
 
     public override void Hover() {
@@ -17,15 +26,21 @@ public class Rune : Clickable
 
 
     // aux functions ///////////////////////////////////////////////////
-    private void LightUp() {
-        // TODO: fill this function with actual functionality
-        Debug.Log("rune is clicked");
+    private void Disappear() {
+        // Terminate rune spawn rate
+       runeEffect.SetFloat("Spawn Rate", 0);
+       //  Unlock rune
+       GameManager.instance.UnlockRune(myKey);
+       //  Stop rune sound effect
+       m_audioSource.Stop();
     }
 
 
     // system messages /////////////////////////////////////////////////
     void Start()
     {
+        myKey = rune.GetInstanceID().ToString();
+        m_audioSource = GetComponent<AudioSource>();
         GameManager.instance.RegisterRune(myKey);
     }
 }
