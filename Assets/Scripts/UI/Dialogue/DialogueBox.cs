@@ -12,6 +12,11 @@ public class DialogueBox : MonoBehaviour
     public GameObject Textbox; // should be a text mesh pro text box
 
 
+    // system messages ///////////////////////////////////
+    private void Start() {
+        GameManager.instance.mainDialogueBox = gameObject;
+    }
+
     // show dialogue /////////////////////////////////////
     public void ShowDialogue(string newDialogue) {
         Textbox.GetComponent<TextMeshProUGUI>().text = newDialogue;
