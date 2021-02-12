@@ -9,7 +9,7 @@ public class Rune : Clickable
     public VisualEffect runeEffect;
 
     private AudioSource m_audioSource;
-    private string myKey;
+    public string myKey;
     
     // clicking and hovering ///////////////////////////////////////////
     public override void Click() {
@@ -39,7 +39,7 @@ public class Rune : Clickable
     // system messages /////////////////////////////////////////////////
     void Start()
     {
-        myKey = rune.GetInstanceID().ToString();
+        // myKey = rune.GetInstanceID().ToString();
         m_audioSource = GetComponent<AudioSource>();
         GameManager.instance.RegisterRune(myKey);
     }
