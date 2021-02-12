@@ -30391,50 +30391,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 699499411}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &709175773
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 709175774}
-  - component: {fileID: 709175775}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &709175774
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709175773}
-  m_LocalRotation: {x: -0.011311628, y: -0.008451769, z: 0.0048364047, w: 0.99988866}
-  m_LocalPosition: {x: 0.75, y: 0.85, z: -0.77}
-  m_LocalScale: {x: 0.70816696, y: 9.402166, z: -8.072507}
-  m_Children: []
-  m_Father: {fileID: 1128596808}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -1.291, y: -0.975, z: 0.565}
---- !u!65 &709175775
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709175773}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &709966078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46944,15 +46900,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128596806}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 704.728, y: 12.88, z: 315.2}
+  m_LocalRotation: {x: -0, y: -0.99940795, z: -0, w: -0.034407213}
+  m_LocalPosition: {x: 710.98, y: 12.88, z: 314.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 885245001}
-  - {fileID: 709175774}
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -183.944, z: 0}
 --- !u!82 &1128596809
 AudioSource:
   m_ObjectHideFlags: 0
@@ -46963,7 +46918,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cf5f48deb408e1048964cf905cdc88f0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1813dd8a3347d924aa9f26a75db0b44b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -46971,12 +46926,12 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 24.1
+  Priority: 67
+  DopplerLevel: 0.24
+  MinDistance: 10.6814575
+  MaxDistance: 80
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -46985,22 +46940,49 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0.7623062
+      inSlope: 8.047033
+      outSlope: 8.047033
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 1
     - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: 0.015236266
+      value: 0.695385
+      inSlope: -10.504199
+      outSlope: -10.504199
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.072381526
+      value: 0.28383636
+      inSlope: -0.65651244
+      outSlope: -0.65651244
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.12761217
+      value: 0.18423462
+      inSlope: -0.55691713
+      outSlope: -0.55691713
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.16188684
+    - serializedVersion: 3
+      time: 0.5314331
+      value: 0.052940734
+      inSlope: -0.09527616
+      outSlope: -0.09527616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -47009,7 +46991,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -47039,7 +47021,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.197
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -50809,7 +50791,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -61867,7 +61849,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 226
+  Priority: 233
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -78238,7 +78220,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 161
+  Priority: 53
   DopplerLevel: 1.71
   MinDistance: 1
   MaxDistance: 43.2
