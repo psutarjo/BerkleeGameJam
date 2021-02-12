@@ -46916,6 +46916,7 @@ GameObject:
   - component: {fileID: 1128596808}
   - component: {fileID: 1128596807}
   - component: {fileID: 1128596809}
+  - component: {fileID: 1128596810}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -46931,7 +46932,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128596806}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.5194702, y: 10.024447, z: 13.099731}
@@ -46962,11 +46963,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cf5f48deb408e1048964cf905cdc88f0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -47048,6 +47049,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1128596810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128596806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fc08da95e004249b1fabcc546a5bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myKey: level_1_end
+  portalDest: {fileID: 845708558}
 --- !u!1 &1134674685
 GameObject:
   m_ObjectHideFlags: 0
@@ -70611,7 +70626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1721689980
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -78128,6 +78143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rune: {fileID: 1857245502}
   runeEffect: {fileID: 1857245510}
+  myKey: level_1_end
 --- !u!135 &1857245504
 SphereCollider:
   m_ObjectHideFlags: 0
