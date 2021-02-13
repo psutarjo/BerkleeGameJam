@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2198874707761701920}
   - component: {fileID: 2198874707761701923}
   - component: {fileID: 2198874707761701922}
+  - component: {fileID: 1784150745472761684}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Player
@@ -74,6 +75,25 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!95 &1784150745472761684
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198874707761701948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 05946266d8ddb884b8456c6baac556f9, type: 3}
+  m_Controller: {fileID: 9100000, guid: a3378c1f338ed5c4fa63a342a0542670, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2198874708470142056
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +713,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Standing Torch Idle 01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 05946266d8ddb884b8456c6baac556f9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 05946266d8ddb884b8456c6baac556f9, type: 3}
 --- !u!4 &2779589499240208791 stripped
 Transform:

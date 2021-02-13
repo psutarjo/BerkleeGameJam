@@ -11,6 +11,8 @@ public class ConrollerMovement : MonoBehaviour
     Vector3 gVelocity;
 
     public float g = 9.8f;
+    
+    Animator animator;
 
     public Transform groundChecker;
     public float groundBuffer = 0.4f;
@@ -18,6 +20,11 @@ public class ConrollerMovement : MonoBehaviour
 
     private bool grounded;
     
+    void Start() 
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
