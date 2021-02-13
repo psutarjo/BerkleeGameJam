@@ -21,6 +21,8 @@ public class ConrollerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.instance.interactionOn) return;
+        
         grounded = Physics.CheckSphere(groundChecker.position, groundBuffer, groundMask);
         
         float x = Input.GetAxis("Horizontal");

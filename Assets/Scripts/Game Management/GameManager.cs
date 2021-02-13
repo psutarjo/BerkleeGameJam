@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    // global marks (I don't want to do it this way but Unity really has bad nativ support for this functionality
+    public bool interactionOn = true;
+
     // progress trackers /////////////////////////////////////////////////////
     // TODO: rune progress
     public Dictionary<string, bool> runes;
